@@ -1,4 +1,5 @@
 from django.conf import settings
+
 from django.db import models
 
 # Create your models here.
@@ -15,9 +16,8 @@ class Item(models.Model):
 class OrderItem(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
 
-
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title
 
 
 class Order(models.Model):
